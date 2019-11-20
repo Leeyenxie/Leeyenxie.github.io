@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Clustering method</title>
+      <link href="/2019/11/20/machine%20learning/clustering/clustering-method/"/>
+      <url>/2019/11/20/machine%20learning/clustering/clustering-method/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>There are plenty of methods to cluster feature points.</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine Learning </category>
+          
+          <category> Clustering </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Clustering </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Markdown command</title>
+      <link href="/2019/11/18/Markdown-command/"/>
+      <url>/2019/11/18/Markdown-command/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Markdown-command"><a href="#Markdown-command" class="headerlink" title="Markdown command"></a>Markdown command</h1><p>The markdown command below requires no plug-ins</p><h2 id="Title"><a href="#Title" class="headerlink" title="Title"></a>Title</h2><p>Insert <code>#</code> for title</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># title</span></span><br><span class="line"><span class="section">## title</span></span><br><span class="line"><span class="section">### title</span></span><br><span class="line"><span class="section">#### title</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure><h2 id="Cite"><a href="#Cite" class="headerlink" title="Cite"></a>Cite</h2><p>Cite…</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; (something you want to cite)</span></span><br></pre></td></tr></table></figure><blockquote><p>Here is a citation…</p></blockquote><h2 id="Dividing-line"><a href="#Dividing-line" class="headerlink" title="Dividing line"></a>Dividing line</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure><hr><h2 id="Delete-line"><a href="#Delete-line" class="headerlink" title="Delete line"></a>Delete line</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~Delete line~~</span><br></pre></td></tr></table></figure><p><del>Delete line</del></p><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">+ test</span></span><br><span class="line"><span class="deletion">- sss</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> test </category>
+          
+          <category> pp </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> website build </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tt</title>
+      <link href="/2019/11/18/tt/"/>
+      <url>/2019/11/18/tt/</url>
+      
+        <content type="html"><![CDATA[<h2 id="guaiwu"><a href="#guaiwu" class="headerlink" title="guaiwu"></a>guaiwu</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> one/kk </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> test </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2019/11/18/machine%20learning/hello-world/"/>
+      <url>/2019/11/18/machine%20learning/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
