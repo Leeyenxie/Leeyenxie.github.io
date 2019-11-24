@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>PCA</title>
-      <link href="/2019/11/23/machine%20learning/Features/PCA/PCA/"/>
-      <url>/2019/11/23/machine%20learning/Features/PCA/PCA/</url>
+      <title>MDS</title>
+      <link href="/2019/11/24/machine%20learning/Features/MDS/MDS/"/>
+      <url>/2019/11/24/machine%20learning/Features/MDS/MDS/</url>
       
-        <content type="html"><![CDATA[<h1 id="principal-components-analysis（PCA"><a href="#principal-components-analysis（PCA" class="headerlink" title="principal components analysis（PCA)"></a>principal components analysis（PCA)</h1><blockquote><p>PCA称为主成分分析或者主分量分析，是一种降低特征维度的方法。</p></blockquote><hr><h2 id="相关背景"><a href="#相关背景" class="headerlink" title="相关背景"></a>相关背景</h2><p>在许多领域中，需要对多变量的数据进行观测与分析。这些变量之间，往往存在着相关性，提高了数据分析的复杂度；若是对每个变量单独进行分析，则会导致无法完全利用数据，往往因此丢失一些重要的信息。</p><a id="more"></a><p>同时，对于一些维度较高的数据来说，降低其维度往往能够减少许多工作量。因此，我们的目标是在减少数据量的同时，需要尽可能的保留数据中原有的信息。</p><hr><h2 id="数据降维的优点"><a href="#数据降维的优点" class="headerlink" title="数据降维的优点"></a>数据降维的优点</h2><ul><li>降低数据分析难度</li><li>可除去不重要的特征</li><li>可除去噪声</li></ul><hr><h2 id="对于PCA的理解"><a href="#对于PCA的理解" class="headerlink" title="对于PCA的理解"></a>对于PCA的理解</h2><p>PCA的出发点是将原先相关的特征通过找到一组相互正交新基进行变换去除相关性（$Y = P^TX$, P为新基，X为初始数据集，Y为降维之后的数据集），将原本数据的维度投影到低维，这群新基称为主成分。</p><blockquote><p>那么，选取这些新基的依据是什么呢？</p></blockquote><p><strong>新基选取过程</strong>：首先选取数据集中，方差最大的方向为第一个主成分的方向，再选择与第一个主成分<em>正交</em>的平面上的一个方差最大的方向作为第二个主成分，以此类推。我们发现，大部分的方差都基本包含在前k个主成分上，后面的方差基本上为0，因此，选取这k个主成分而忽略方差基本为0的主成分即可获得系统中主要的方差，这个过程可以可以去除一些不重要的特征，从而达到降维的目的。</p><hr><h2 id="PCA过程"><a href="#PCA过程" class="headerlink" title="PCA过程"></a>PCA过程</h2><ol><li>数据集为n个m维样本X，并计算每个特征的期望值${\mu}_i = \frac {1}{n}\sum_{i=1}^nx_i$</li><li>对这些样本进行去中心化（减去期望值）$x_i := x_i - \mu_i$</li><li>求解随机变量间的协方差矩阵$C = \frac {1}{n}XX^T$（由于已去中心化，因此协方差矩阵可化成与该简单形式）</li><li>求解协方差矩阵$C$的特征值以及特征向量</li><li>按特征值从大到小排序，取前k个相应的特征向量组成矩阵$P:[P_1,P_2,…,P_k]$（特征向量组成的矩阵维度为m*k）</li><li>变换之后的数据样本为$Y = P^TX$，从而将数据样本的特征降到了k维</li></ol><hr><h2 id="PCA具体的数学解释"><a href="#PCA具体的数学解释" class="headerlink" title="PCA具体的数学解释"></a>PCA具体的数学解释</h2><p><strong>转自<a href="https://zhuanlan.zhihu.com/p/26951643" target="_blank" rel="noopener">原文</a>.</strong></p><h3 id="编码与解码"><a href="#编码与解码" class="headerlink" title="编码与解码"></a>编码与解码</h3><p>PCA的构建需要编码器与解码器，编码器可以理解为将原数据样本投影到低维的矩阵，解码器可以理解维将投影之后的低维矩阵重新投影到高维的矩阵，以下为编码器与解码器的推导：</p><center><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g98zbh68kaj312u0feq83.jpg" width="80%" height="80%">PCA构建</center><h3 id="推导过程"><a href="#推导过程" class="headerlink" title="推导过程"></a>推导过程</h3><center><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g98zh0qx4wj311e0u079t.jpg" width="80%" height="80%">编码器与解码器推导</center>  <p>其中，$c = D^Tx$表示满足使得解码后的数据与原矩阵误差最小的最优解，该形式正好是可得到编码器：</p><center>$f(x) = D^Tx$</center>  <p>$r(x)$重构操作的意义为先编码再将其解码，可以以此为优化条件求得编码矩阵（或解码矩阵）的最优解。</p><center><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g98zpmontqj30z50u0gra.jpg" width="80%" height="80%"></center><center><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g98zrc6bykj313m0ao421.jpg" width="80%" height="80%">编码（矩阵）优化过程</center>  <p>推导过程用到了在优化问题中经常使用的拉格朗日乘子法，该方法适用于一些有约束条件的优化问题。最终，优化结果为对拉格朗日函数求偏导<strong>$\frac{\partial L}{\partial d} = 0$</strong>，得<script type="math/tex">XX^Td = \lambda d</script>。而$XX^T$的形式刚好与去中心化下写协方差矩阵的表达式“一致”（差一个$\frac{1}{n}$），因此PCA过程中求解协方差矩阵等效于求得该优化过程的最有解。</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Multiple-Dimensional-Scaling-MDS"><a href="#Multiple-Dimensional-Scaling-MDS" class="headerlink" title="Multiple Dimensional Scaling(MDS)"></a>Multiple Dimensional Scaling(MDS)</h1><blockquote><p>MDS被称为多维缩放算法，是一种经典的特征降维算法。</p></blockquote><h2 id="相关背景"><a href="#相关背景" class="headerlink" title="相关背景"></a>相关背景</h2><p>MDS一般被用在已知空间中点与点之间的距离，而点的精确坐标与维度是未知的。即给定一个实对称的距离矩阵$D \in \mathbb R^{N \times N}$($d_{ij} = d_{ji}$)，将其投影到更低维空间中。</p><a id="more"></a><ul><li>低维空间中的点经过平移(translation)，旋转(rotation)和对称(reflection)后，点与点之间的距离是不不变的。</li></ul><h2 id="MDS计算过程"><a href="#MDS计算过程" class="headerlink" title="MDS计算过程"></a>MDS计算过程</h2><ol><li>得到一个距离矩阵$\mathbf D$，通过$\mathbf B = -\frac {1}{2} JDJ$计算内积矩阵$B$，其中:  </li></ol><center>$\mathbf J = \mathbf I_N - \frac {1}{N} \mathbf e \mathbf e^T$  $e = (1,1,...,1)^T$</center><ol><li><p>将$\mathbf B$做特征值分解，得：  </p><center>$B = V\Lambda V^T$</center></li><li><p>将特征值从小到大排序，可知后面的特征值基本为零，因此取前$D^{‘}$个特征值以及其对应的特征向量$\tilde{\Lambda}$。</p></li><li><p>得到低维空间中的表示：  </p><center>$Z = \tilde {\Lambda}^{\frac {1}{2}} \tilde {V}^T  \in \mathbb R^{D^{'} \times N}$</center></li></ol><p>其中，$Z^TZ = R \in \mathbb R^{N \times N}$</p><h2 id="推导过程"><a href="#推导过程" class="headerlink" title="推导过程"></a>推导过程</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>已知距离矩阵$D$，先将其投影到低维空间，得$Z \in \mathbb R^{D^{‘} \times N}$。Z是在低维空间中样本点的表示($z_i, z_j$,…$为$Z$的列向量，可以将其近似理解为每个点在空间的矢量)。在此低维空间中，点与点之间的欧式距离可以表示为：  </p><center>$dist_{ij} = \parallel{z_i - z_j}\parallel$</center>  <p>上式为MDS最重要的前提。</p><h3 id="MDS形式化"><a href="#MDS形式化" class="headerlink" title="MDS形式化"></a>MDS形式化</h3><p>首先，需要对样本进行中心化（必须进行的一步），之后的推导中利用前提$\sum_{i=1} ^N z_i = 0$来进行。</p><center><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g99de6eh7nj31b10u0dli.jpg" width="80%" height="80%"></center><center><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g99djt3parj31iq0s2adg.jpg" width="80%" height="80%"></center><center><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g99dmy2fj1j31im0nygp3.jpg" width="80%" height="80%"></center><blockquote><p>将$z_{ij}$与$d_{ij}$互相表示，方便之后推导直接代入。</p></blockquote><h3 id="内积矩阵"><a href="#内积矩阵" class="headerlink" title="内积矩阵"></a>内积矩阵</h3><ul><li><p>定义内积矩阵$B = ZZ^T$，其中$B \in \mathbb R^{N \time N}$，即$b_{ij} = z_i^Tz_j$。</p></li><li><p>利用距离矩阵$D$表示内积矩阵$B$。</p></li></ul><center><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g99dvt14d6j31ho0rgtf4.jpg" width="80%" height="80%"></center><center><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g99dy3zs8nj31b80u0n5r.jpg" width="80%" height="80%"></center><p>$b_{ij}$完全可以用$d_{ij}$来表示，因此，用矩阵表示为：</p><center>$B = -\frac {1}{2} JDJ$</center><p>接着，将$B$进行特征值分解：</p><center><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g99e32bfw1j31fc0rodmo.jpg" width="80%" height="80%"></center><p>由于$\Lambda$为对角矩阵，因此$\Lambda ^{\frac {1}{2}}$即为对角上特征值取根号的矩阵。</p>]]></content>
       
       
       <categories>
@@ -23,6 +23,37 @@
             <tag> Machine Learning </tag>
             
             <tag> Feature Reduction </tag>
+            
+            <tag> MDS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PCA</title>
+      <link href="/2019/11/23/machine%20learning/Features/PCA/PCA/"/>
+      <url>/2019/11/23/machine%20learning/Features/PCA/PCA/</url>
+      
+        <content type="html"><![CDATA[<h1 id="principal-components-analysis（PCA"><a href="#principal-components-analysis（PCA" class="headerlink" title="principal components analysis（PCA)"></a>principal components analysis（PCA)</h1><blockquote><p>PCA称为主成分分析或者主分量分析，是一种降低特征维度的方法。</p></blockquote><hr><h2 id="相关背景"><a href="#相关背景" class="headerlink" title="相关背景"></a>相关背景</h2><p>在许多领域中，需要对多变量的数据进行观测与分析。这些变量之间，往往存在着相关性，提高了数据分析的复杂度；若是对每个变量单独进行分析，则会导致无法完全利用数据，往往因此丢失一些重要的信息。</p><a id="more"></a><p>同时，对于一些维度较高的数据来说，降低其维度往往能够减少许多工作量。因此，我们的目标是在减少数据量的同时，需要尽可能的保留数据中原有的信息。</p><hr><h2 id="数据降维的优点"><a href="#数据降维的优点" class="headerlink" title="数据降维的优点"></a>数据降维的优点</h2><ul><li>降低数据分析难度</li><li>可除去不重要的特征</li><li>可除去噪声</li></ul><hr><h2 id="对于PCA的理解"><a href="#对于PCA的理解" class="headerlink" title="对于PCA的理解"></a>对于PCA的理解</h2><p>PCA的出发点是将原先相关的特征通过找到一组相互正交新基进行变换去除相关性（$Y = P^TX$, P为新基，X为初始数据集，Y为降维之后的数据集），将原本数据的维度投影到低维，这群新基称为主成分。</p><blockquote><p>那么，选取这些新基的依据是什么呢？</p></blockquote><p><strong>新基选取过程</strong>：首先选取数据集中，方差最大的方向为第一个主成分的方向，再选择与第一个主成分<em>正交</em>的平面上的一个方差最大的方向作为第二个主成分，以此类推。我们发现，大部分的方差都基本包含在前k个主成分上，后面的方差基本上为0，因此，选取这k个主成分而忽略方差基本为0的主成分即可获得系统中主要的方差，这个过程可以可以去除一些不重要的特征，从而达到降维的目的。</p><hr><h2 id="PCA过程"><a href="#PCA过程" class="headerlink" title="PCA过程"></a>PCA过程</h2><ol><li>数据集为n个m维样本X，并计算每个特征的期望值${\mu}_i = \frac {1}{n}\sum_{i=1}^nx_i$</li><li>对这些样本进行去中心化（减去期望值）$x_i := x_i - \mu_i$</li><li>求解随机变量间的协方差矩阵$C = \frac {1}{n}XX^T$（由于已中心化，因此协方差矩阵可化成与该简单形式）</li><li>求解协方差矩阵$C$的特征值以及特征向量</li><li>按特征值从大到小排序，取前k个相应的特征向量组成矩阵$P:[P_1,P_2,…,P_k]$（特征向量组成的矩阵维度为m*k）</li><li>变换之后的数据样本为$Y = P^TX$，从而将数据样本的特征降到了k维</li></ol><hr><h2 id="PCA具体的数学解释"><a href="#PCA具体的数学解释" class="headerlink" title="PCA具体的数学解释"></a>PCA具体的数学解释</h2><p><strong>转自<a href="https://zhuanlan.zhihu.com/p/26951643" target="_blank" rel="noopener">原文</a>.</strong></p><h3 id="编码与解码"><a href="#编码与解码" class="headerlink" title="编码与解码"></a>编码与解码</h3><p>PCA的构建需要编码器与解码器，编码器可以理解为将原数据样本投影到低维的矩阵，解码器可以理解维将投影之后的低维矩阵重新投影到高维的矩阵，以下为编码器与解码器的推导：</p><center><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g98zbh68kaj312u0feq83.jpg" width="80%" height="80%">PCA构建</center><h3 id="推导过程"><a href="#推导过程" class="headerlink" title="推导过程"></a>推导过程</h3><center><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g98zh0qx4wj311e0u079t.jpg" width="80%" height="80%">编码器与解码器推导</center>  <p>其中，$c = D^Tx$表示满足使得解码后的数据与原矩阵误差最小的最优解，该形式正好是可得到编码器：</p><center>$f(x) = D^Tx$</center>  <p>$r(x)$重构操作的意义为先编码再将其解码，可以以此为优化条件求得编码矩阵（或解码矩阵）的最优解。</p><center><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g98zpmontqj30z50u0gra.jpg" width="80%" height="80%"></center><center><img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g98zrc6bykj313m0ao421.jpg" width="80%" height="80%">编码（矩阵）优化过程</center>  <p>推导过程用到了在优化问题中经常使用的拉格朗日乘子法，该方法适用于一些有约束条件的优化问题。最终，优化结果为对拉格朗日函数求偏导<strong>$\frac{\partial L}{\partial d} = 0$</strong>，得<script type="math/tex">XX^Td = \lambda d</script>。而$XX^T$的形式刚好与中心化下写协方差矩阵的表达式“一致”（差一个$\frac{1}{n}$），因此PCA过程中求解协方差矩阵等效于求得该优化过程的最有解。  </p><hr><h1 id="K-L离散变换与PCA的区别"><a href="#K-L离散变换与PCA的区别" class="headerlink" title="K-L离散变换与PCA的区别"></a>K-L离散变换与PCA的区别</h1><p>K-L离散变换对其自相似矩阵$R = XX^T$求特征值与特征向量，其他步骤与PCA相同：将特征值从大到小排列，最终取前k个特征值对应的特征向量。</p><blockquote><p>实际上，K-L变换的变换矩阵可以有很多种：二阶矩阵、协方差矩阵、总类内离散度矩阵等等，当变换矩阵为协方差矩阵时，K-L与PCA等价。  </p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Machine Learning </tag>
+            
+            <tag> Feature Reduction </tag>
+            
+            <tag> PCA </tag>
             
         </tags>
       
