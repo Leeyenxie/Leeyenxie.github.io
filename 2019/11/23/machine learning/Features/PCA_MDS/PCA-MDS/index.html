@@ -48,18 +48,20 @@
   };
 </script>
 
-  <meta name="description" content="There are plenty of methods to cluster feature points.">
-<meta name="keywords" content="Machine Learning,Clustering">
+  <meta name="description" content="principal components analysis（PCA) PCA称为主成分分析或者主分量分析，是一种降低特征维度的方法。 相关背景在许多领域中，需要对多变量的数据进行观测与分析。这些变量之间，往往存在着相关性，提高了数据分析的复杂度；若是对每个变量单独进行分析，则会导致无法完全利用数据，往往因此丢失一些重要的信息。">
+<meta name="keywords" content="Machine Learning,Feature Reduction">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Clustering method">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;20&#x2F;machine%20learning&#x2F;clustering&#x2F;clustering-method&#x2F;index.html">
+<meta property="og:title" content="PCA and MDS">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;machine%20learning&#x2F;Features&#x2F;PCA_MDS&#x2F;PCA-MDS&#x2F;index.html">
 <meta property="og:site_name" content="lyfk">
-<meta property="og:description" content="There are plenty of methods to cluster feature points.">
+<meta property="og:description" content="principal components analysis（PCA) PCA称为主成分分析或者主分量分析，是一种降低特征维度的方法。 相关背景在许多领域中，需要对多变量的数据进行观测与分析。这些变量之间，往往存在着相关性，提高了数据分析的复杂度；若是对每个变量单独进行分析，则会导致无法完全利用数据，往往因此丢失一些重要的信息。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-23T15:26:03.302Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;machine%20learning&#x2F;Features&#x2F;PCA_MDS&#x2F;PCA-MDS&#x2F;1.png">
+<meta property="og:updated_time" content="2019-11-24T02:50:23.071Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;machine%20learning&#x2F;Features&#x2F;PCA_MDS&#x2F;PCA-MDS&#x2F;1.png">
 
-<link rel="canonical" href="http://yoursite.com/2019/11/20/machine%20learning/clustering/clustering-method/">
+<link rel="canonical" href="http://yoursite.com/2019/11/23/machine%20learning/Features/PCA_MDS/PCA-MDS/">
 
 
 <script id="page-configurations">
@@ -73,7 +75,7 @@
   };
 </script>
 
-  <title>Clustering method | lyfk</title>
+  <title>PCA and MDS | lyfk</title>
   
 
 
@@ -204,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/20/machine%20learning/clustering/clustering-method/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/23/machine%20learning/Features/PCA_MDS/PCA-MDS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -217,7 +219,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Clustering method
+          PCA and MDS
         </h1>
 
         <div class="post-meta">
@@ -227,14 +229,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2019-11-20 15:11:38" itemprop="dateCreated datePublished" datetime="2019-11-20T15:11:38+08:00">2019-11-20</time>
+              <time title="Created: 2019-11-23 23:29:11" itemprop="dateCreated datePublished" datetime="2019-11-23T23:29:11+08:00">2019-11-23</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-23 23:26:03" itemprop="dateModified" datetime="2019-11-23T23:26:03+08:00">2019-11-23</time>
+                <time title="Modified: 2019-11-24 10:50:23" itemprop="dateModified" datetime="2019-11-24T10:50:23+08:00">2019-11-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -259,9 +261,36 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <blockquote>
-<p>There are plenty of methods to cluster feature points.</p>
+        <h1 id="principal-components-analysis（PCA"><a href="#principal-components-analysis（PCA" class="headerlink" title="principal components analysis（PCA)"></a>principal components analysis（PCA)</h1><blockquote>
+<p>PCA称为主成分分析或者主分量分析，是一种降低特征维度的方法。</p>
+</blockquote><hr><h2 id="相关背景"><a href="#相关背景" class="headerlink" title="相关背景"></a>相关背景</h2><p>在许多领域中，需要对多变量的数据进行观测与分析。这些变量之间，往往存在着相关性，提高了数据分析的复杂度；若是对每个变量单独进行分析，则会导致无法完全利用数据，往往因此丢失一些重要的信息。</p><a id="more"></a>
+
+
+<p>同时，对于一些维度较高的数据来说，降低其维度往往能够减少许多工作量。因此，我们的目标是在减少数据量的同时，需要尽可能的保留数据中原有的信息。</p>
+<hr>
+<h2 id="数据降维的优点"><a href="#数据降维的优点" class="headerlink" title="数据降维的优点"></a>数据降维的优点</h2><ul>
+<li>降低数据分析难度</li>
+<li>可除去不重要的特征</li>
+<li>可除去噪声</li>
+</ul>
+<hr>
+<h2 id="对于PCA的理解"><a href="#对于PCA的理解" class="headerlink" title="对于PCA的理解"></a>对于PCA的理解</h2><p>PCA的出发点是将原先相关的特征通过找到一组相互正交新基进行变换去除相关性（$Y = P^TX$, P为新基，X为初始数据集，Y为降维之后的数据集），将原本数据的维度投影到低维，这群新基称为主成分。</p>
+<blockquote>
+<p>那么，选取这些新基的依据是什么呢？</p>
 </blockquote>
+<p><strong>新基选取过程</strong>：首先选取数据集中，方差最大的方向为第一个主成分的方向，再选择与第一个主成分<em>正交</em>的平面上的一个方差最大的方向作为第二个主成分，以此类推。我们发现，大部分的方差都基本包含在前k个主成分上，后面的方差基本上为0，因此，选取这k个主成分而忽略方差基本为0的主成分即可获得系统中主要的方差，这个过程可以可以去除一些不重要的特征，从而达到降维的目的。</p>
+<hr>
+<h2 id="PCA过程"><a href="#PCA过程" class="headerlink" title="PCA过程"></a>PCA过程</h2><ol>
+<li>数据集为n个m维样本X，并计算每个特征的期望值${\mu}_i = \frac {1}{n}\sum_{i=1}^nx_i$</li>
+<li>对这些样本进行去中心化（减去期望值）$x_i := x_i - \mu_i$</li>
+<li>求解随机变量间的协方差矩阵$C = \frac {1}{n}XX^T$（由于已去中心化，因此协方差矩阵可化成与该简单形式）</li>
+<li>求解协方差矩阵$C$的特征值以及特征向量</li>
+<li>按特征值从大到小排序，取前k个相应的特征向量组成矩阵$P:[P_1,P_2,…,P_k]$（特征向量组成的矩阵维度为m*k）</li>
+<li>变换之后的数据样本为$Y = P^TX$，从而将数据样本的特征降到了k维</li>
+</ol>
+<hr>
+<h2 id="PCA具体的数学解释"><a href="#PCA具体的数学解释" class="headerlink" title="PCA具体的数学解释"></a>PCA具体的数学解释</h2><p><img src="1.png" width="300" height="200" alt="最小化重建误差" align="center"></p>
+
     </div>
 
     
@@ -272,24 +301,21 @@
           
           <div class="post-tags">
               <a href="/tags/Machine-Learning/" rel="tag"><i class="fa fa-tag"></i> Machine Learning</a>
-              <a href="/tags/Clustering/" rel="tag"><i class="fa fa-tag"></i> Clustering</a>
+              <a href="/tags/Feature-Reduction/" rel="tag"><i class="fa fa-tag"></i> Feature Reduction</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/18/basic%20tool/Markdown-command/" rel="next" title="Markdown Usage">
-                  <i class="fa fa-chevron-left"></i> Markdown Usage
+                <a href="/2019/11/22/basic%20tool/ssh-key-config/" rel="next" title="ssh-key-config">
+                  <i class="fa fa-chevron-left"></i> ssh-key-config
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/22/basic%20tool/ssh-key-config/" rel="prev" title="ssh-key-config">
-                  ssh-key-config <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -328,6 +354,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#principal-components-analysis（PCA"><span class="nav-number">1.</span> <span class="nav-text">principal components analysis（PCA)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#相关背景"><span class="nav-number">1.1.</span> <span class="nav-text">相关背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据降维的优点"><span class="nav-number">1.2.</span> <span class="nav-text">数据降维的优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对于PCA的理解"><span class="nav-number">1.3.</span> <span class="nav-text">对于PCA的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCA过程"><span class="nav-number">1.4.</span> <span class="nav-text">PCA过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCA具体的数学解释"><span class="nav-number">1.5.</span> <span class="nav-text">PCA具体的数学解释</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -466,6 +493,54 @@
   
 
   
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
 
   
 

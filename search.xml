@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>PCA and MDS</title>
+      <link href="/2019/11/23/machine%20learning/Features/PCA_MDS/PCA-MDS/"/>
+      <url>/2019/11/23/machine%20learning/Features/PCA_MDS/PCA-MDS/</url>
+      
+        <content type="html"><![CDATA[<h1 id="principal-components-analysis（PCA"><a href="#principal-components-analysis（PCA" class="headerlink" title="principal components analysis（PCA)"></a>principal components analysis（PCA)</h1><blockquote><p>PCA称为主成分分析或者主分量分析，是一种降低特征维度的方法。</p></blockquote><hr><h2 id="相关背景"><a href="#相关背景" class="headerlink" title="相关背景"></a>相关背景</h2><p>在许多领域中，需要对多变量的数据进行观测与分析。这些变量之间，往往存在着相关性，提高了数据分析的复杂度；若是对每个变量单独进行分析，则会导致无法完全利用数据，往往因此丢失一些重要的信息。</p><a id="more"></a><p>同时，对于一些维度较高的数据来说，降低其维度往往能够减少许多工作量。因此，我们的目标是在减少数据量的同时，需要尽可能的保留数据中原有的信息。</p><hr><h2 id="数据降维的优点"><a href="#数据降维的优点" class="headerlink" title="数据降维的优点"></a>数据降维的优点</h2><ul><li>降低数据分析难度</li><li>可除去不重要的特征</li><li>可除去噪声</li></ul><hr><h2 id="对于PCA的理解"><a href="#对于PCA的理解" class="headerlink" title="对于PCA的理解"></a>对于PCA的理解</h2><p>PCA的出发点是将原先相关的特征通过找到一组相互正交新基进行变换去除相关性（$Y = P^TX$, P为新基，X为初始数据集，Y为降维之后的数据集），将原本数据的维度投影到低维，这群新基称为主成分。</p><blockquote><p>那么，选取这些新基的依据是什么呢？</p></blockquote><p><strong>新基选取过程</strong>：首先选取数据集中，方差最大的方向为第一个主成分的方向，再选择与第一个主成分<em>正交</em>的平面上的一个方差最大的方向作为第二个主成分，以此类推。我们发现，大部分的方差都基本包含在前k个主成分上，后面的方差基本上为0，因此，选取这k个主成分而忽略方差基本为0的主成分即可获得系统中主要的方差，这个过程可以可以去除一些不重要的特征，从而达到降维的目的。</p><hr><h2 id="PCA过程"><a href="#PCA过程" class="headerlink" title="PCA过程"></a>PCA过程</h2><ol><li>数据集为n个m维样本X，并计算每个特征的期望值${\mu}_i = \frac {1}{n}\sum_{i=1}^nx_i$</li><li>对这些样本进行去中心化（减去期望值）$x_i := x_i - \mu_i$</li><li>求解随机变量间的协方差矩阵$C = \frac {1}{n}XX^T$（由于已去中心化，因此协方差矩阵可化成与该简单形式）</li><li>求解协方差矩阵$C$的特征值以及特征向量</li><li>按特征值从大到小排序，取前k个相应的特征向量组成矩阵$P:[P_1,P_2,…,P_k]$（特征向量组成的矩阵维度为m*k）</li><li>变换之后的数据样本为$Y = P^TX$，从而将数据样本的特征降到了k维</li></ol><hr><h2 id="PCA具体的数学解释"><a href="#PCA具体的数学解释" class="headerlink" title="PCA具体的数学解释"></a>PCA具体的数学解释</h2><p><img src="1.png" width="300" height="200" alt="最小化重建误差" align="center"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Machine Learning </tag>
+            
+            <tag> Feature Reduction </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ssh-key-config</title>
       <link href="/2019/11/22/basic%20tool/ssh-key-config/"/>
       <url>/2019/11/22/basic%20tool/ssh-key-config/</url>
@@ -40,12 +67,12 @@
           
           <category> Machine Learning </category>
           
-          <category> Clustering </category>
-          
       </categories>
       
       
         <tags>
+            
+            <tag> Machine Learning </tag>
             
             <tag> Clustering </tag>
             

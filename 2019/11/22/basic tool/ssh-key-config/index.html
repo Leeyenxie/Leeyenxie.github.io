@@ -56,7 +56,7 @@
 <meta property="og:site_name" content="lyfk">
 <meta property="og:description" content="Generate ssh-Keygen file The configuration of ssh-key for multi-user First account:1$ ssh-keygen -t rsa -C &quot;first@github.com&quot; It will ask for ‘keygen’ filename and password you want, please set differ">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-11-22T07:01:42.366Z">
+<meta property="og:updated_time" content="2019-11-23T16:27:31.373Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/22/basic%20tool/ssh-key-config/">
@@ -226,10 +226,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-11-22 09:56:14 / Modified: 15:01:42" itemprop="dateCreated datePublished" datetime="2019-11-22T09:56:14+08:00">2019-11-22</time>
+              <time title="Created: 2019-11-22 09:56:14" itemprop="dateCreated datePublished" datetime="2019-11-22T09:56:14+08:00">2019-11-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-24 00:27:31" itemprop="dateModified" datetime="2019-11-24T00:27:31+08:00">2019-11-24</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -261,27 +267,21 @@
 
 
 
-
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-add ~/.ssh/filename1</span><br></pre></td></tr></table></figure>
-
 <p>For another accout, excute the same commands as above</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"first@github.com"</span></span><br><span class="line">$ ssh-add ~/.ssh/filename2</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>If abort fatal ‘Could not open a connection to your authentication agent’</p>
 </blockquote>
 <p>Maybe we could try:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-agent bash</span><br></pre></td></tr></table></figure>
-
 <p>which means <code>ssh-agent</code> need to start <code>bash</code>.</p>
 <hr>
 <h1 id="Setup-‘config’-file"><a href="#Setup-‘config’-file" class="headerlink" title="Setup ‘config’ file"></a>Setup ‘config’ file</h1><p><code>config</code> file is in <code>~/.ssh</code></p>
 <p>if <code>config</code> does not exit, please use <code>touch</code> or <code>vim</code> to generate a new <code>config</code> file.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch config &amp; vim config</span><br></pre></td></tr></table></figure>
-
 <p>The config containing:</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># github for work</span></span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com  # for github</span><br><span class="line">User git</span><br><span class="line">IdentityFile ~/.ssh/first_filename # ssh-keygen generated file</span><br><span class="line"></span><br><span class="line"><span class="section"># github for personal</span></span><br><span class="line">Host personal.github.com</span><br><span class="line">HostName github.com  # for github</span><br><span class="line">User git</span><br><span class="line">IdentityFile ~/.ssh/second_filename</span><br></pre></td></tr></table></figure>
-
 <p>After saving <code>config</code> file, please try whether the configurate is right.</p>
 <blockquote>
 <p>Before that, we should copy the documents in <code>first_filename.pub</code> and <code>second_filename.pub</code> into corresponding github account, the documents start with <code>ssh-rsa</code>.</p>
@@ -291,17 +291,13 @@
 <p>For first account:</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-
 <p>if the output is:</p>
 <figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi xxx! You<span class="symbol">'ve</span> successfully authenticated, but GitHub does <span class="keyword">not</span> provide shell <span class="keyword">access</span>.</span><br></pre></td></tr></table></figure>
-
 <p>Which means the configuration is fine.</p>
 <p>Now, try the second account:</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@personal.github.com # git@Host in config file</span><br></pre></td></tr></table></figure>
-
 <p>If there’s no mistake, you will get:</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi xxx! You've successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
-
 <p>Finally, if you want to configure hexo <code>_config.yaml</code> file to push on github, you could try to revise the <code>_config.yaml</code>:</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@personal.github.com:username/username.github.io.git   # change githubuser to your own github user name</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 
@@ -329,6 +325,9 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2019/11/23/machine%20learning/Features/PCA_MDS/PCA-MDS/" rel="prev" title="PCA and MDS">
+                  PCA and MDS <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -381,20 +380,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -502,6 +501,8 @@
 
 
 
+
+  
 
   
 
