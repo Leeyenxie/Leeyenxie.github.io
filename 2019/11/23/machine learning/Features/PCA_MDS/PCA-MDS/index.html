@@ -51,14 +51,16 @@
   <meta name="description" content="principal components analysis（PCA) PCA称为主成分分析或者主分量分析，是一种降低特征维度的方法。 相关背景在许多领域中，需要对多变量的数据进行观测与分析。这些变量之间，往往存在着相关性，提高了数据分析的复杂度；若是对每个变量单独进行分析，则会导致无法完全利用数据，往往因此丢失一些重要的信息。">
 <meta name="keywords" content="Machine Learning,Feature Reduction">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PCA and MDS">
+<meta property="og:title" content="PCA">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;machine%20learning&#x2F;Features&#x2F;PCA_MDS&#x2F;PCA-MDS&#x2F;index.html">
 <meta property="og:site_name" content="lyfk">
 <meta property="og:description" content="principal components analysis（PCA) PCA称为主成分分析或者主分量分析，是一种降低特征维度的方法。 相关背景在许多领域中，需要对多变量的数据进行观测与分析。这些变量之间，往往存在着相关性，提高了数据分析的复杂度；若是对每个变量单独进行分析，则会导致无法完全利用数据，往往因此丢失一些重要的信息。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g98zbh68kaj312u0feq83.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g98zh0qx4wj311e0u079t.jpg">
-<meta property="og:updated_time" content="2019-11-24T03:52:46.380Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g98zpmontqj30z50u0gra.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g98zrc6bykj313m0ao421.jpg">
+<meta property="og:updated_time" content="2019-11-24T04:17:41.984Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g98zbh68kaj312u0feq83.jpg">
 
@@ -76,7 +78,7 @@
   };
 </script>
 
-  <title>PCA and MDS | lyfk</title>
+  <title>PCA | lyfk</title>
   
 
 
@@ -220,7 +222,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          PCA and MDS
+          PCA
         </h1>
 
         <div class="post-meta">
@@ -237,7 +239,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-24 11:52:46" itemprop="dateModified" datetime="2019-11-24T11:52:46+08:00">2019-11-24</time>
+                <time title="Modified: 2019-11-24 12:17:41" itemprop="dateModified" datetime="2019-11-24T12:17:41+08:00">2019-11-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -297,13 +299,26 @@
 PCA构建
 </center>
 
-<h3 id="推导过程"><a href="#推导过程" class="headerlink" title="推导过程"></a>推导过程</h3><p><center>
+<h3 id="推导过程"><a href="#推导过程" class="headerlink" title="推导过程"></a>推导过程</h3><center>
 <img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g98zh0qx4wj311e0u079t.jpg" width="80%" height="80%">
 编码器与解码器推导
-</center><br>其中，$c = D^Tx$表示满足使得解码后的数据与原矩阵误差最小的最优解，该形式正好是可得到编码器：</p>
-<p><center>
+</center>  
+
+<p>其中，$c = D^Tx$表示满足使得解码后的数据与原矩阵误差最小的最优解，该形式正好是可得到编码器：</p>
+<center>
 $f(x) = D^Tx$
-</center><br>$r(x)$重构操作的意义为先编码再将其解码，可以以此为优化条件求得编码矩阵（或解码矩阵）的最优解。<br>最终得到的最小化重建误差与$-Tr(W^TXX^TW)$成比例，因此，对于原式的最小化即等价于对$-Tr(W^TXX^TW)$最最小化</p>
+</center>  
+
+<p>$r(x)$重构操作的意义为先编码再将其解码，可以以此为优化条件求得编码矩阵（或解码矩阵）的最优解。</p>
+<center>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g98zpmontqj30z50u0gra.jpg" width="80%" height="80%">
+</center>
+<center>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g98zrc6bykj313m0ao421.jpg" width="80%" height="80%">
+编码（矩阵）优化过程
+</center>  
+
+<p>推导过程用到了在优化问题中经常使用的拉格朗日乘子法，该方法适用于一些有约束条件的优化问题。最终，优化结果为对拉格朗日函数求偏导<strong>$\frac{\partial L}{\partial d} = 0$</strong>，得<script type="math/tex">XX^Td = \lambda d</script>。而$XX^T$的形式刚好与去中心化下写协方差矩阵的表达式“一致”（差一个$\frac{1}{n}$），因此PCA过程中求解协方差矩阵等效于求得该优化过程的最有解。</p>
 
     </div>
 
