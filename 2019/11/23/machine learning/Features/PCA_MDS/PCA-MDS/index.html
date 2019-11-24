@@ -56,10 +56,11 @@
 <meta property="og:site_name" content="lyfk">
 <meta property="og:description" content="principal components analysis（PCA) PCA称为主成分分析或者主分量分析，是一种降低特征维度的方法。 相关背景在许多领域中，需要对多变量的数据进行观测与分析。这些变量之间，往往存在着相关性，提高了数据分析的复杂度；若是对每个变量单独进行分析，则会导致无法完全利用数据，往往因此丢失一些重要的信息。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;machine%20learning&#x2F;Features&#x2F;PCA_MDS&#x2F;PCA-MDS&#x2F;1.png">
-<meta property="og:updated_time" content="2019-11-24T02:50:23.071Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g98zbh68kaj312u0feq83.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g98zh0qx4wj311e0u079t.jpg">
+<meta property="og:updated_time" content="2019-11-24T03:52:46.380Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;23&#x2F;machine%20learning&#x2F;Features&#x2F;PCA_MDS&#x2F;PCA-MDS&#x2F;1.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g98zbh68kaj312u0feq83.jpg">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/23/machine%20learning/Features/PCA_MDS/PCA-MDS/">
 
@@ -236,7 +237,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-24 10:50:23" itemprop="dateModified" datetime="2019-11-24T10:50:23+08:00">2019-11-24</time>
+                <time title="Modified: 2019-11-24 11:52:46" itemprop="dateModified" datetime="2019-11-24T11:52:46+08:00">2019-11-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -289,7 +290,20 @@
 <li>变换之后的数据样本为$Y = P^TX$，从而将数据样本的特征降到了k维</li>
 </ol>
 <hr>
-<h2 id="PCA具体的数学解释"><a href="#PCA具体的数学解释" class="headerlink" title="PCA具体的数学解释"></a>PCA具体的数学解释</h2><p><img src="1.png" width="300" height="200" alt="最小化重建误差" align="center"></p>
+<h2 id="PCA具体的数学解释"><a href="#PCA具体的数学解释" class="headerlink" title="PCA具体的数学解释"></a>PCA具体的数学解释</h2><p><strong>转自<a href="https://zhuanlan.zhihu.com/p/26951643" target="_blank" rel="noopener">原文</a>.</strong></p>
+<h3 id="编码与解码"><a href="#编码与解码" class="headerlink" title="编码与解码"></a>编码与解码</h3><p>PCA的构建需要编码器与解码器，编码器可以理解为将原数据样本投影到低维的矩阵，解码器可以理解维将投影之后的低维矩阵重新投影到高维的矩阵，以下为编码器与解码器的推导：</p>
+<center>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g98zbh68kaj312u0feq83.jpg" width="80%" height="80%">
+PCA构建
+</center>
+
+<h3 id="推导过程"><a href="#推导过程" class="headerlink" title="推导过程"></a>推导过程</h3><p><center>
+<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g98zh0qx4wj311e0u079t.jpg" width="80%" height="80%">
+编码器与解码器推导
+</center><br>其中，$c = D^Tx$表示满足使得解码后的数据与原矩阵误差最小的最优解，该形式正好是可得到编码器：</p>
+<p><center>
+$f(x) = D^Tx$
+</center><br>$r(x)$重构操作的意义为先编码再将其解码，可以以此为优化条件求得编码矩阵（或解码矩阵）的最优解。<br>最终得到的最小化重建误差与$-Tr(W^TXX^TW)$成比例，因此，对于原式的最小化即等价于对$-Tr(W^TXX^TW)$最最小化</p>
 
     </div>
 
@@ -354,7 +368,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#principal-components-analysis（PCA"><span class="nav-number">1.</span> <span class="nav-text">principal components analysis（PCA)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#相关背景"><span class="nav-number">1.1.</span> <span class="nav-text">相关背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据降维的优点"><span class="nav-number">1.2.</span> <span class="nav-text">数据降维的优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对于PCA的理解"><span class="nav-number">1.3.</span> <span class="nav-text">对于PCA的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCA过程"><span class="nav-number">1.4.</span> <span class="nav-text">PCA过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCA具体的数学解释"><span class="nav-number">1.5.</span> <span class="nav-text">PCA具体的数学解释</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#principal-components-analysis（PCA"><span class="nav-number">1.</span> <span class="nav-text">principal components analysis（PCA)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#相关背景"><span class="nav-number">1.1.</span> <span class="nav-text">相关背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据降维的优点"><span class="nav-number">1.2.</span> <span class="nav-text">数据降维的优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对于PCA的理解"><span class="nav-number">1.3.</span> <span class="nav-text">对于PCA的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCA过程"><span class="nav-number">1.4.</span> <span class="nav-text">PCA过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PCA具体的数学解释"><span class="nav-number">1.5.</span> <span class="nav-text">PCA具体的数学解释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编码与解码"><span class="nav-number">1.5.1.</span> <span class="nav-text">编码与解码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推导过程"><span class="nav-number">1.5.2.</span> <span class="nav-text">推导过程</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
