@@ -56,15 +56,15 @@
 <meta property="og:site_name" content="lyfk">
 <meta property="og:description" content="Multiple Dimensional Scaling(MDS) MDS被称为多维缩放算法，是一种经典的特征降维算法。 相关背景MDS一般被用在已知空间中点与点之间的距离，而点的精确坐标与维度是未知的。即给定一个实对称的距离矩阵$D \in \mathbb R^{N \times N}$($d_{ij} = d_{ji}$)，将其投影到更低维空间中。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g99de6eh7nj31b10u0dli.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g99djt3parj31iq0s2adg.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g99dmy2fj1j31im0nygp3.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g99dvt14d6j31ho0rgtf4.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g99dy3zs8nj31b80u0n5r.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g99e32bfw1j31fc0rodmo.jpg">
-<meta property="og:updated_time" content="2019-11-24T12:38:18.146Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;xfkpic.oss-cn-beijing.aliyuncs.com&#x2F;blog&#x2F;2019-11-24-160006.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xfkpic.oss-cn-beijing.aliyuncs.com&#x2F;blog&#x2F;2019-11-24-160008.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xfkpic.oss-cn-beijing.aliyuncs.com&#x2F;blog&#x2F;2019-11-24-160009.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xfkpic.oss-cn-beijing.aliyuncs.com&#x2F;blog&#x2F;2019-11-24-160010.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xfkpic.oss-cn-beijing.aliyuncs.com&#x2F;blog&#x2F;2019-11-24-160011.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;xfkpic.oss-cn-beijing.aliyuncs.com&#x2F;blog&#x2F;2019-11-24-160012.jpg">
+<meta property="og:updated_time" content="2019-11-24T16:08:29.239Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;006y8mN6ly1g99de6eh7nj31b10u0dli.jpg">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;xfkpic.oss-cn-beijing.aliyuncs.com&#x2F;blog&#x2F;2019-11-24-160006.jpg">
 
 <link rel="canonical" href="http://yoursite.com/2019/11/24/machine%20learning/Features/MDS/MDS/">
 
@@ -233,10 +233,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-11-24 19:01:45 / Modified: 20:38:18" itemprop="dateCreated datePublished" datetime="2019-11-24T19:01:45+08:00">2019-11-24</time>
+              <time title="Created: 2019-11-24 19:01:45" itemprop="dateCreated datePublished" datetime="2019-11-24T19:01:45+08:00">2019-11-24</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-25 00:08:29" itemprop="dateModified" datetime="2019-11-25T00:08:29+08:00">2019-11-25</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -298,15 +304,15 @@ $dist_{ij} = \parallel{z_i - z_j}\parallel$
 <p>上式为MDS最重要的前提。</p>
 <h3 id="MDS形式化"><a href="#MDS形式化" class="headerlink" title="MDS形式化"></a>MDS形式化</h3><p>首先，需要对样本进行中心化（必须进行的一步），之后的推导中利用前提$\sum_{i=1} ^N z_i = 0$来进行。</p>
 <center>
-<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g99de6eh7nj31b10u0dli.jpg" width="80%" height="80%">
+<img src="https://xfkpic.oss-cn-beijing.aliyuncs.com/blog/2019-11-24-160006.jpg" width="80%" height="80%">
 </center>
 
 <center>
-<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g99djt3parj31iq0s2adg.jpg" width="80%" height="80%">
+<img src="https://xfkpic.oss-cn-beijing.aliyuncs.com/blog/2019-11-24-160008.jpg" width="80%" height="80%">
 </center>
 
 <center>
-<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g99dmy2fj1j31im0nygp3.jpg" width="80%" height="80%">
+<img src="https://xfkpic.oss-cn-beijing.aliyuncs.com/blog/2019-11-24-160009.jpg" width="80%" height="80%">
 </center>
 
 <blockquote>
@@ -319,11 +325,11 @@ $dist_{ij} = \parallel{z_i - z_j}\parallel$
 </li>
 </ul>
 <center>
-<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g99dvt14d6j31ho0rgtf4.jpg" width="80%" height="80%">
+<img src="https://xfkpic.oss-cn-beijing.aliyuncs.com/blog/2019-11-24-160010.jpg" width="80%" height="80%">
 </center>
 
 <center>
-<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g99dy3zs8nj31b80u0n5r.jpg" width="80%" height="80%">
+<img src="https://xfkpic.oss-cn-beijing.aliyuncs.com/blog/2019-11-24-160011.jpg" width="80%" height="80%">
 </center>
 
 <p>$b_{ij}$完全可以用$d_{ij}$来表示，因此，用矩阵表示为：</p>
@@ -333,7 +339,7 @@ $B = -\frac {1}{2} JDJ$
 
 <p>接着，将$B$进行特征值分解：</p>
 <center>
-<img src="https://tva1.sinaimg.cn/large/006y8mN6ly1g99e32bfw1j31fc0rodmo.jpg" width="80%" height="80%">
+<img src="https://xfkpic.oss-cn-beijing.aliyuncs.com/blog/2019-11-24-160012.jpg" width="80%" height="80%">
 </center>
 
 <p>由于$\Lambda$为对角矩阵，因此$\Lambda ^{\frac {1}{2}}$即为对角上特征值取根号的矩阵。</p>
