@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>about PRML</title>
+      <link href="/2019/12/02/machine%20learning/PRML/about-PRML/"/>
+      <url>/2019/12/02/machine%20learning/PRML/about-PRML/</url>
+      
+        <content type="html"><![CDATA[<h1 id="About-Pattern-Recognization-Machine-Learning"><a href="#About-Pattern-Recognization-Machine-Learning" class="headerlink" title="About Pattern Recognization Machine Learning"></a>About Pattern Recognization Machine Learning</h1><p><a href="https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/" target="_blank" rel="noopener">https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/</a><br>该网站提供了PRML这本书的勘误以及课件代码等，mark一下…</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Machine Learning </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Machine Learning </tag>
+            
+            <tag> PRML </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linear Regression with basis function</title>
       <link href="/2019/12/01/machine%20learning/Regression/Linear-Regression-with-basis-function/"/>
       <url>/2019/12/01/machine%20learning/Regression/Linear-Regression-with-basis-function/</url>
@@ -172,7 +199,7 @@
       <link href="/2019/11/18/basic%20tool/Markdown-command/"/>
       <url>/2019/11/18/basic%20tool/Markdown-command/</url>
       
-        <content type="html"><![CDATA[<h1 id="Markdown-command"><a href="#Markdown-command" class="headerlink" title="Markdown command"></a>Markdown command</h1><p>The markdown command below requires no plug-ins</p><h2 id="Title"><a href="#Title" class="headerlink" title="Title"></a>Title</h2><p>Insert <code>#</code> for title</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># title</span></span><br><span class="line"><span class="section">## title</span></span><br><span class="line"><span class="section">### title</span></span><br><span class="line"><span class="section">#### title</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure><h2 id="Cite"><a href="#Cite" class="headerlink" title="Cite"></a>Cite</h2><p>Cite…</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; (something you want to cite)</span></span><br></pre></td></tr></table></figure><a id="more"></a><blockquote><p>Here is a citation…</p></blockquote><h2 id="Dividing-line"><a href="#Dividing-line" class="headerlink" title="Dividing line"></a>Dividing line</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure><hr><h2 id="Delete-line"><a href="#Delete-line" class="headerlink" title="Delete line"></a>Delete line</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~Delete line~~</span><br></pre></td></tr></table></figure><p><del>Delete line</del></p><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">+ test</span></span><br><span class="line"><span class="deletion">- sss</span></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="Markdown-command"><a href="#Markdown-command" class="headerlink" title="Markdown command"></a>Markdown command</h1><p>The markdown command below requires no plug-ins</p><h2 id="Title"><a href="#Title" class="headerlink" title="Title"></a>Title</h2><p>Insert <code>#</code> for title</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># title</span></span><br><span class="line"><span class="section">## title</span></span><br><span class="line"><span class="section">### title</span></span><br><span class="line"><span class="section">#### title</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure><h2 id="Cite"><a href="#Cite" class="headerlink" title="Cite"></a>Cite</h2><p>Cite…</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; (something you want to cite)</span></span><br></pre></td></tr></table></figure><a id="more"></a><blockquote><p>Here is a citation…</p></blockquote><h2 id="Dividing-line"><a href="#Dividing-line" class="headerlink" title="Dividing line"></a>Dividing line</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure><hr><h2 id="Delete-line"><a href="#Delete-line" class="headerlink" title="Delete line"></a>Delete line</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~Delete line~~</span><br></pre></td></tr></table></figure><p><del>Delete line</del></p><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">+ test</span></span><br><span class="line"><span class="deletion">- sss</span></span><br></pre></td></tr></table></figure><p>参考自：<br><a href="https://www.jianshu.com/p/25f0139637b7" target="_blank" rel="noopener">https://www.jianshu.com/p/25f0139637b7</a><br><a href="https://www.jianshu.com/p/0ea47ae02262" target="_blank" rel="noopener">https://www.jianshu.com/p/0ea47ae02262</a></p>]]></content>
       
       
       <categories>
