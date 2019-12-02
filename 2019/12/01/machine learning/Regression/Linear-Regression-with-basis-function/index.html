@@ -57,8 +57,9 @@
 <meta property="og:description" content="本文目的是搞清楚具有基函数(basis function)情况下，具体的计算细节中是怎么样的。 一维情况 输入输出均为一维向量的情况（一个样本） Linear regression一般情况下的线性回归(Linear Rgression)可以表达为：   ${y}(\bf {x},\bf {w}$$) = w_0 + \sum_i^N{w_ix_i}$">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;xfkpic.oss-cn-beijing.aliyuncs.com&#x2F;blog&#x2F;2019-12-01-115758.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;xfkpic.oss-cn-beijing.aliyuncs.com&#x2F;blog&#x2F;2019-12-02-010807.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;xfkpic.oss-cn-beijing.aliyuncs.com&#x2F;blog&#x2F;2019-12-01-120645.png">
-<meta property="og:updated_time" content="2019-12-02T00:59:24.546Z">
+<meta property="og:updated_time" content="2019-12-02T01:09:49.159Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;xfkpic.oss-cn-beijing.aliyuncs.com&#x2F;blog&#x2F;2019-12-01-115758.png">
 
@@ -237,7 +238,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-12-02 08:59:24" itemprop="dateModified" datetime="2019-12-02T08:59:24+08:00">2019-12-02</time>
+                <time title="Modified: 2019-12-02 09:09:49" itemprop="dateModified" datetime="2019-12-02T09:09:49+08:00">2019-12-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -297,7 +298,13 @@ $\phi_j(x) = exp(-\frac {(x-\mu_j)^2}{2s^2})$
 Gaussian basis function
 </center>
 
-<p>$s$是需要自己调整的，而$\mu_j$的确定方式为间距为$s$的网格上。</p>
+<p>$s$是需要自己调整的，而$\mu_j$的则在间距为$s$的网格上。</p>
+<p>Like this:  </p>
+<center>
+<img src="https://xfkpic.oss-cn-beijing.aliyuncs.com/blog/2019-12-02-010807.png" width="80%" height="80%">
+$\mu$ and $s$
+</center>
+
 <center>
 <img src="https://xfkpic.oss-cn-beijing.aliyuncs.com/blog/2019-12-01-120645.png" width="80%" height="80%">
 Different $s$
