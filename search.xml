@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Typora 设置</title>
+      <link href="/2020/05/04/typora/Typora%E6%96%87%E6%A1%A3/"/>
+      <url>/2020/05/04/typora/Typora%E6%96%87%E6%A1%A3/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h3><ul><li><a href="#Typora字体设置">字体设置</a></li></ul><h4 id="Typora字体设置"><a href="#Typora字体设置" class="headerlink" title="Typora字体设置"></a>Typora字体设置</h4><ul><li><p>大小(font-size: 20px)</p></li><li><p>行高(line-height: normal) 单位：px, pd, em</p></li><li><p>常用字体: (font-family)</p></li><li><p>色彩：(background-color: #FFFFFF;)</p></li><li><p>图片：(background-image: url();)</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Basic tool </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> typora </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>about PRML</title>
       <link href="/2019/12/02/machine%20learning/PRML/about-PRML/"/>
       <url>/2019/12/02/machine%20learning/PRML/about-PRML/</url>
@@ -212,31 +237,6 @@
         <tags>
             
             <tag> website build </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Typora 设置</title>
-      <link href="/2019/11/18/typora/Typora%E6%96%87%E6%A1%A3/"/>
-      <url>/2019/11/18/typora/Typora%E6%96%87%E6%A1%A3/</url>
-      
-        <content type="html"><![CDATA[<h3 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h3><ul><li><a href="#Typora字体设置">字体设置</a></li></ul><h4 id="Typora字体设置"><a href="#Typora字体设置" class="headerlink" title="Typora字体设置"></a>Typora字体设置</h4><ul><li><p>大小(font-size: 20px)</p></li><li><p>行高(line-height: normal) 单位：px, pd, em</p></li><li><p>常用字体: (font-family)</p></li><li><p>色彩：(background-color: #FFFFFF;)</p></li><li><p>图片：(background-image: url();)</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> Basic tool </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> typora </tag>
             
         </tags>
       
