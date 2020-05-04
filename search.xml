@@ -199,7 +199,7 @@
       <link href="/2019/11/18/basic%20tool/Markdown-command/"/>
       <url>/2019/11/18/basic%20tool/Markdown-command/</url>
       
-        <content type="html"><![CDATA[<h1 id="Markdown-command"><a href="#Markdown-command" class="headerlink" title="Markdown command"></a>Markdown command</h1><p>The markdown command below requires no plug-ins</p><h2 id="Title"><a href="#Title" class="headerlink" title="Title"></a>Title</h2><p>Insert <code>#</code> for title</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># title</span></span><br><span class="line"><span class="section">## title</span></span><br><span class="line"><span class="section">### title</span></span><br><span class="line"><span class="section">#### title</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure><h2 id="Cite"><a href="#Cite" class="headerlink" title="Cite"></a>Cite</h2><p>Cite…</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; (something you want to cite)</span></span><br></pre></td></tr></table></figure><a id="more"></a><blockquote><p>Here is a citation…</p></blockquote><h2 id="Dividing-line"><a href="#Dividing-line" class="headerlink" title="Dividing line"></a>Dividing line</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure><hr><h2 id="Delete-line"><a href="#Delete-line" class="headerlink" title="Delete line"></a>Delete line</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~Delete line~~</span><br></pre></td></tr></table></figure><p><del>Delete line</del></p><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">+ test</span></span><br><span class="line"><span class="deletion">- sss</span></span><br></pre></td></tr></table></figure><p>参考自：<br><a href="https://www.jianshu.com/p/25f0139637b7" target="_blank" rel="noopener">https://www.jianshu.com/p/25f0139637b7</a><br><a href="https://www.jianshu.com/p/0ea47ae02262" target="_blank" rel="noopener">https://www.jianshu.com/p/0ea47ae02262</a></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Markdown-command"><a href="#Markdown-command" class="headerlink" title="Markdown command"></a>Markdown command</h1><p><a href="#Title">Title</a></p><p>[Cite][#Cite]</p><p><a href="#Dividing line">Dividing line</a></p><p><a href="#Delete line">Delete line</a></p><p><a href="#Cite Content">Cite Content</a></p><p>The markdown command below requires no plug-ins</p><h2 id="Title"><a href="#Title" class="headerlink" title="Title"></a>Title</h2><p>Insert <code>#</code> for title</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># title</span></span><br><span class="line"><span class="section">## title</span></span><br><span class="line"><span class="section">### title</span></span><br><span class="line"><span class="section">#### title</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure><a id="more"></a><h2 id="Cite"><a href="#Cite" class="headerlink" title="Cite"></a>Cite</h2><p>Cite…</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="quote">&gt; (something you want to cite)</span></span><br></pre></td></tr></table></figure><blockquote><p>Here is a citation…</p></blockquote><h2 id="Dividing-line"><a href="#Dividing-line" class="headerlink" title="Dividing line"></a>Dividing line</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">---</span><br></pre></td></tr></table></figure><hr><h2 id="Delete-line"><a href="#Delete-line" class="headerlink" title="Delete line"></a>Delete line</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~Delete line~~</span><br></pre></td></tr></table></figure><p><del>Delete line</del></p><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="addition">+ test</span></span><br><span class="line"><span class="deletion">- sss</span></span><br></pre></td></tr></table></figure><hr><h2 id="Cite-Content"><a href="#Cite-Content" class="headerlink" title="Cite Content"></a>Cite Content</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">name</span>](<span class="link">#headname</span>)</span><br></pre></td></tr></table></figure><hr><p>参考自：<br><a href="https://www.jianshu.com/p/25f0139637b7" target="_blank" rel="noopener">https://www.jianshu.com/p/25f0139637b7</a><br><a href="https://www.jianshu.com/p/0ea47ae02262" target="_blank" rel="noopener">https://www.jianshu.com/p/0ea47ae02262</a></p>]]></content>
       
       
       <categories>
@@ -212,6 +212,31 @@
         <tags>
             
             <tag> website build </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Typora 设置</title>
+      <link href="/2019/11/18/typora/Typora%E6%96%87%E6%A1%A3/"/>
+      <url>/2019/11/18/typora/Typora%E6%96%87%E6%A1%A3/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Typora"><a href="#Typora" class="headerlink" title="Typora"></a>Typora</h3><ul><li><a href="#Typora字体设置">字体设置</a></li></ul><h4 id="Typora字体设置"><a href="#Typora字体设置" class="headerlink" title="Typora字体设置"></a>Typora字体设置</h4><ul><li><p>大小(font-size: 20px)</p></li><li><p>行高(line-height: normal) 单位：px, pd, em</p></li><li><p>常用字体: (font-family)</p></li><li><p>色彩：(background-color: #FFFFFF;)</p></li><li><p>图片：(background-image: url();)</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Basic tool </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> typora </tag>
             
         </tags>
       
